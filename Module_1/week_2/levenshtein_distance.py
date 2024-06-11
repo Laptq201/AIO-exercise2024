@@ -1,3 +1,4 @@
+import math
 def levenshtein_distance(token1, token2):
     matrix = [[0 for _ in range(len(token2) + 1)] for _ in range(len(token1) + 1)]
     for i in range(len(token1) + 1):
@@ -13,10 +14,9 @@ def levenshtein_distance(token1, token2):
             matrix[i][j] = min(matrix[i - 1][j] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j - 1] + cost)
     
     distance = matrix[len(token1)][len(token2)]
-
     return distance 
 
 
 if __name__ == '__main__':
-    assert levenshtein_distance("hi", "hello") == 4.0
+    assert math.isclose(levenshtein_distance("hola", "hello"), 3)
     print(levenshtein_distance("hola", "hello"))
