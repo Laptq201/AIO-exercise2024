@@ -7,5 +7,5 @@ def approx_sinh(x, n):
     return sinh_x
 
 if __name__=="main":
-    assert round(approx_sinh(x=1, n=10), 2)==1.18
+    assert math.isclose(round(approx_sinh(x=1, n=10), 2), 1.18, rel_tol=1e-09, abs_tol=1e-09)
     print(round(approx_sinh(x=3.14, n=10), 2))

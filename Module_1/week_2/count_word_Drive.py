@@ -1,5 +1,3 @@
-!gdown https://drive.google.com/uc?id=1IBScGdW2xlNsc9v5zSAya548kNgiOrko
-
 def count_word ( file_path ) :
     counter = {} 
     with open(file_path) as file:

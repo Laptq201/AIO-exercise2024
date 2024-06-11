@@ -8,5 +8,5 @@ def approx_sin(x, n):
 
 
 if __name__=="main":
-    assert round(approx_sin(x=1, n=10), 4) == 0.8415
+    assert math.isclose(round(approx_sin(x=1, n=10), 4), 0.8415, rel_tol=1e-09, abs_tol=1e-09)
     print(round(approx_sin(x=3.14, n=10), 4))

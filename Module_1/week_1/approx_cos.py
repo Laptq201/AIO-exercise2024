@@ -7,5 +7,5 @@ def approx_cos(x, n):
     return cos_x
 
 if __name__=="main":
-    assert round(approx_cos(x=1, n=10), 2) == 0.54
+    assert math.isclose(round(approx_cos(x=1, n=10), 2), 0.54, rel_tol=1e-09, abs_tol=1e-09)
     print(round(approx_cos(x=3.14, n=10), 2))
