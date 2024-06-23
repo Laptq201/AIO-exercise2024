@@ -20,45 +20,51 @@ class Student(Person):
         self._grade = grade
 
     def describe(self):
-        print(f"Student - Name: {self._name} - YoB: {self._yob} - Grade: {self._grade}")
+        print(
+            f"Student - Name: {self._name} - YoB: {self._yob} - Grade: {self._grade}")
+
 
 class Teacher(Person):
     def __init__(self, name: str, yob: int, subject: str):
         super().__init__(name, yob)
         self._subject = subject
-    
+
     def describe(self):
-        print(f"Teacher - Name: {self._name} - YoB: {self._yob} - Subject: {self._subject}")
+        print(
+            f"Teacher - Name: {self._name} - YoB: {self._yob} - Subject: {self._subject}")
+
 
 class Doctor(Person):
     def __init__(self, name: str, yob: int, specialist: str):
         super().__init__(name, yob)
         self._specialty = specialist
-    def describe(self):
-        print(f"Doctor - Name: {self._name} - YoB: {self._yob} - Specialty: {self._specialty}")
 
+    def describe(self):
+        print(
+            f"Doctor - Name: {self._name} - YoB: {self._yob} - Specialty: {self._specialty}")
 
 
 class Ward:
     def __init__(self, name: str):
         self.__name = name
-        self.__list_people = list()  
-    
+        self.__list_people = list()
+
     def add_person(self, person: Person):
         self.__list_people.append(person)
-    
+
     def describe(self):
         print(f"Ward Name: {self.__name}")
         for person in self.__list_people:
             person.describe()
-    
+
     def count_doctor(self):
         count = 0
         for person in self.__list_people:
             if isinstance(person, Doctor):
                 count += 1
         print(count)
-    
+
+
 def main():
     student1 = Student(name='studentZ2023', yob=2011, grade=6)
     assert student1._yob == 2011
@@ -68,7 +74,8 @@ def main():
     assert teacher1._yob == 1991
     teacher1.describe()
 
-    doctor1 = Doctor(name='doctorZ2023', yob=1981, specialist='Endocrinologists')
+    doctor1 = Doctor(name='doctorZ2023', yob=1981,
+                     specialist='Endocrinologists')
     assert doctor1._yob == 1981
     doctor1.describe()
 
